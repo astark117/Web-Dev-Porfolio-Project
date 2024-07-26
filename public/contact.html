@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Anthony Stark</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+    <header>
+        <h1> Anthony Stark <img src="apple-touch-icon.png"></h1>
+    </header>
+    <nav>
+        <a href="index.html"> Home </a>
+        <a href="gallery.html">Gallery </a>
+        <a href="order.html"> Order </a>
+        <a href="contact.html">Contact </a>
+    </nav>
+    <main>
+        <section>
+            <h2>Contact</h2>
+            <article>
+                <h3>Contact Anthony Stark</h3>
+                <p>* Fields are required.</p>
+                <form action="/output" method="POST" >
+                    <fieldset>
+                        <legend>Basic information</legend>
+                        <label for="firstlast" class="required"> First and Last Name</label>
+                            <input
+                                type="text"
+                                name="firstlast" id="firstlast"
+                                size="30"
+                                maxLength="80"
+                                required
+                                placeholder="First and last name goes here"
+                                autofocus
+                                aria-required="true"
+                                />
+                                <br>
+                        <label for="email" class="required"> Email Address</label>
+                            <input type="email"
+                                name="email" id="email"
+                                size="30"
+                                maxLength="80"
+                                required
+                                pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+$"
+                                placeholder="email@domain.com"
+                                aria-required="true"
+                                />
+                                <br>
+                        <label for="reason" class="required"> Why are you reaching out?</label>
+                            <textarea
+                                name="reason" id="'reason"
+                                maxLength="500"
+                                minlength="1"
+                                required
+                                aria-required="true"
+                                placeholder="500 characters or less"></textarea>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Feedback for improvement</legend>
+                        <p>How would you describe your experience here today?</p>
+                        <label for="great">
+                            <input type="radio" name="experience" id="great" value="Great">
+                            Great!
+                        </label>
+                        <label for="OK">
+                            <input type="radio" name="experience" id="ok" value="Ok">
+                            Just OK
+                        </label>
+                        <label for="poor">
+                            <input type="radio" name="experience" id="poor" value="Poor">
+                            Could have been better
+                        </label>
+
+                        <p>What area of the website could use the most improvement?</p>
+                        <select name="improvement" id="improvement">
+                            <option value="Gallery Page">Gallery</option>
+                            <option value="Contact Page"> Contact Form</option>
+                            <option value="Home Page">Home page content</option>
+                            <option value="Design"> Design and Layout </option>
+                        </select>
+
+                        <p>What would you like to see more of?</p>
+                        <label for="projects">
+                            <input type="checkbox" name="more" id="projects" value="CodingProjects"/>
+                            Coding Projects
+                        </label>
+                        <label for="hobbies">
+                            <input type="checkbox" name="more" id="hobbies" value="Hobbies"/>
+                            Personal Hobbies
+                        </label>
+                        <label for="topics">
+                            <input type="checkbox" name="more" id="topics" value="WebDevTopics"/>
+                            Web Development topics
+                        </label>
+                        <label for="bio">
+                            <input type="checkbox" name="more" id="personal" value="PersonalBio"/>
+                            An "About Me" section
+                    </fieldset>
+                    <button>Submit form</button>
+                </form>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>
+            &#169; 2024 Anthony Stark
+        </p>
+    </footer>
+</body>
+</html>
