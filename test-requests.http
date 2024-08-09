@@ -1,0 +1,100 @@
+### CREATE five documents.
+POST http://localhost:3000/autos HTTP/1.1
+content-type: application/json
+
+{
+    "datePurchased": "2021-05-02",
+    "countryOfOrigin": "Japan",
+    "year": 2017, 
+    "make": "Toyota",
+    "model": "Tacoma",
+    "mileage": 68000
+}
+
+
+### CREATE 2
+POST http://localhost:3000/autos HTTP/1.1
+content-type: application/json
+
+{
+    "datePurchased": "2018-08-02",
+    "countryOfOrigin": "Japan",
+    "year": 2014, 
+    "make": "Toyota",
+    "model": "Tacoma",
+    "mileage": 69000
+}
+
+### CREATE 3
+POST http://localhost:3000/autos HTTP/1.1
+content-type: application/json
+
+{
+    "datePurchased": "2015-06-03",
+    "countryOfOrigin": "Japan",
+    "year": 1997, 
+    "make": "Toyota",
+    "model": "Tacoma",
+    "mileage": 252000
+}
+
+### CREATE 4
+POST http://localhost:3000/autos HTTP/1.1
+content-type: application/json
+
+{
+    "datePurchased": "2010-02-03",
+    "countryOfOrigin": "Japan",
+    "year": 1998, 
+    "make": "Subaru",
+    "model": "Forester",
+    "mileage": 198000
+}
+
+### CREATE 5
+POST http://localhost:3000/autos HTTP/1.1
+content-type: application/json
+
+{
+    "datePurchased": "2006-09-03",
+    "countryOfOrigin": "Sweden",
+    "year": 1996, 
+    "make": "Volvo",
+    "model": "850 T5",
+    "mileage": 156000
+}
+
+
+### RETRIEVE all documents.
+GET http://localhost:3000/autos HTTP/1.1
+
+
+
+### RETRIEVE a document by its ID.
+### Replace the following ID with one that exists in the collection.
+GET http://localhost:3000/autos/66aafcee9dc1288c32d248d9 HTTP/1.1
+
+
+### UPDATE one document's year, by ID.
+### Replace the ID in the following request with one that exists
+### and update the year:
+PUT http://localhost:3000/autos/66aafbf89dc1288c32d248cc HTTP/1.1
+content-type: application/json
+
+{
+    "datePurchased": "2012-09-03",
+    "countryOfOrigin": "USA",
+    "year": 1998, 
+    "make": "Ford",
+    "model": "Ranger",
+    "mileage": 88000
+}
+
+### DELETE by ID (responds with nothing if successful):
+DELETE http://localhost:3000/autos/66aafcee9dc1288c32d248d9 HTTP/1.1
+
+
+
+### RETRIEVE all documents (responds with 4 or the original 5):
+GET http://localhost:3000/autos HTTP/1.1
+

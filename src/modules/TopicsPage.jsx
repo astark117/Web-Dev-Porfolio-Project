@@ -1,0 +1,234 @@
+function TopicsPage(){
+    return(
+        <>
+            <h2>Web Development Concepts</h2>
+            <nav class="local">
+                <a href="#server"> Web Servers </a>
+                <a href="#frontend"> Frontend Design </a>
+                <a href="#images"> Optimizing Images </a>
+                <a href="#favicons"> Favicons </a>
+                <a href="#css"> CSS </a>
+                <a href="#forms"> Forms </a>
+                <a href="#express"> Node & Express </a>
+                <a href="#javascript"> JavaScript</a>
+            </nav>
+            <article id="servers">
+                <h3>Web Servers</h3>
+                <p>
+                    A <strong>designated home page</strong> is the default page a web server returns to the client if a specific file is not specified. 
+                    In other words, if the GET request file path is /, the index.html page is returned and displayed.
+                    It contains an overview of site content and provides means of accessing documents stored at that website. 
+                    The home page name varies depending on the language, with index.html being standard for the Apache web server. Microsoft's .NET framework uses default.html, and some servers will look
+                    for index.js or index.php as well. 
+                </p>
+
+                <p>
+                    Some things that can be viewed through a browser's Web Dev/Inspector Network tab are <strong>http requests</strong>, <strong>status codes</strong>, and <strong>remote address</strong>. 
+                    When the same file is viewed locally in the browser there is no remote address displayed. The response header data contains far less information, only the file type and last-modified date. The request header data also contains less data, only the User-Agent is displayed for a local file.
+                    The Status code is displayed the same, whether it is a local file or a file on a web server, as is the Request Method (GET). 
+                </p>
+              
+                <p>
+                    There are two visible <strong>status codes</strong> in the Web Dev tool's network tab.
+                    The 200 code is visisble for the favicon.ico and the 404 code is visible for the main.css and main.js files. 200 indicates a successful request, indicating that the favicon.ico request returned the appropriate document.
+                    The Request Header shows the User-Agent, web client, and referer url. The response header shows the size of the favicon.ico file, type of file, last modified date, and server it is hosted on. The status code displays 200 OK, indicating it was able to return the requested document.
+                    The 404 is a client error indicating that the main.css and main.js files were not found on the server being accessed, this makes sense since they haven't been created yet.
+                    The Request header shows the same information as with the favicon.ico, with the additional display of cookies. The Response header shows Keep-alive with a timeout and maximum time before the request times out. In this case the content type is listed as text/html instead of the actual file type.
+                    The Status code is displayed as 404 - Not Found, since the file does not exist, it was not successfully returned and displayed through the web client.
+                </p>
+                <p>
+                    https://web.engr.oregonstate.edu/~starkan/index.html 
+                    The https is the <strong>scheme</strong>, it tells the client what protocol to use to access the document.
+                    The oregonstate.edu is the <strong>host domain</strong>. 
+                    The web.engr is the <strong>subdomain</strong>.
+                    This host domain and subdomain make up the <strong>server name</strong> and are used by the DNS server to look up the IP address of the machine hosting the document.
+                    The /~starkan/index.html is the path to the <strong>resource</strong>. It is used to identify the document on the server to be returned and displayed.
+                </p>
+            </article>
+            <article id="frontend">
+                <h3>Frontend Design</h3>
+            
+                <p>
+                    The concept of frontend design is focused on the user's experience with the web application. It includes the visible layout and <strong>graphical user interface</strong>,
+                    and the interactive experience that a user goes through to access content on the application. This includes design topics like font, color scheme, navigation systems,
+                    images, and accessibility.
+                </p>
+            
+                <h4>The five "E"s of usability are:</h4>
+                <dl>
+                    <dt><strong>Effective</strong></dt>
+                    <dd>Does the design meet user requirements?</dd>
+                    <dt><strong>Efficient</strong></dt>
+                    <dd>Does the design accomplish the user's task in the fewest steps possible?</dd>
+                    <dt><strong>Easy to navigate</strong></dt>
+                    <dd>Does the design provide an easy way for users to access the content they want to see?</dd>
+                    <dt><strong>Error-free</strong></dt>
+                    <dd>Does the design avoid accessibility and availability issues?</dd>
+                    <dt><strong>Engaging</strong></dt>
+                    <dd>Does the design fit the user's needs and provide them with an experience that will make them want to return?</dd>
+                </dl>
+            
+                <p>
+                    There were six page layout tags used in this assignment, these tags separate blocks of content. 
+                    The contents of the <strong>&lt;header&gt;</strong> tag is the banner at the top of a website/application and typically contain the name and publisher of the site.
+                    The contents of the <strong>&lt;footer&gt;</strong> tag appear at the bottom of the page and typically include legal/copyright information and/or contact information.
+                    The <strong>&lt;main&gt;</strong> tag contains all of the primary content of the web page, including text, images, video, etc.
+                    The <strong>&lt;section&gt;</strong> tag is used to group content that shares a common theme, with the theme typically displayed as a h1 header for the section. 
+                    The <strong>&lt;article&gt;</strong> tag is typically used to present a single topic, typically within a section. 
+                    Lastly, the <strong>&lt;nav&gt;</strong> tag is used to link the current page to other pages.
+                </p>
+              
+                <h4>There are three different ways anchors are used to link content to a web page.</h4>
+                <ol>
+                    <li>Anchors link external content through <strong>absolute paths</strong>. (the full URL to external content)</li>
+                    <li>Anchors link internal content using an <strong>ID</strong> to jump to the section or article with a tag containing that ID.</li>
+                    <li>Anchors link from page-to-page through a <strong>relative path</strong>. The full URL is not necessary, since both of the pages being linked are on the same server or directory.</li>
+                </ol>
+            </article>
+            <article id="images">
+                <h3>Optimizing Images</h3>
+               
+                <p>
+                    There are six main specifications when it comes to optimizing images for web pages/applications. 
+                    The first is a descriptive file name, which improves <strong>search engine optimization(SEO)</strong>.
+                    The second is using <strong>image compression</strong> to reduce image file size as much as possible, which is important because large files will take longer to load.
+                    The third also has to do with minimizing file size, this time through <strong>cropping</strong> and reducing the size of the image to the exact size needed for the page/app.
+                    The fourth also ties in with reducing file size, this time through reducing resolution to what is typically displayed on a monitor. Having a greater resolution than a monitor can display will increase file size without increasing viewed image quality.
+                    The fifth is using the correct color mode for the image file type. <strong>Indexed colors</strong> are used for .GIF and some .PNG files. <strong>RGB color</strong> is used for the other file types.
+                    The sixth is using the correct <strong>file format</strong> for the image type.
+                </p>
+
+                <p>
+                    The three file formats that are appropriate for line art are Scalable Vector Graphics(SVG), GIF, and PNG. 
+                    <strong>SVG</strong> files have the largest file size of the three, but also the best image quality. 
+                    <strong>GIF</strong> files only have one background color, and colors are saved in indexed color mode. This results in taking up less space than a SVG file, but with less image quality and color variety.
+                    <strong>PNG</strong> files can be used for line art or photographs. They have true transparency and colors can be saved in RGB mode, which takes up more space but gives more variety, or indexed color mode, with a compressed file size but less color variety. 
+                    PNG format is commonly used for screenshots and can capture photos with line art, however they can become pixelated if they are not compressed properly.
+                    Three file formats are appropriate for photographs: PNG, JPG, and WebP.
+                    <strong>JPG</strong> files are compressed photographs that remain rectangular and have much smaller file sizes than raw photograph files, however at high compression they lose image quality.
+                    <strong>WebP</strong> files are rectangular, compressed to smaller file sizes, and can have true transparency. Like JPG files they will lose image quality under high compression.
+                </p>
+            </article>
+            <article id="favicons">
+                <h3>Favicons</h3>
+          
+                <p>
+                    <strong>Favicons</strong> are used to quickly identify a website/application when glancing at a device, browser tab, or search engine results. They are small images that are displayed on the tab, next to the search engine result, or on the device.
+                </p>
+            </article>
+            <article id="css">
+                <h3>Cascading Stylesheets (CSS)</h3>
+  
+                <p>
+                    <strong>Stylesheets</strong> allow for a division between content (HTML) and style (CSS) which makes updating either content or style easier. 
+                    Incorporating stylesheets into websites and applications is important because they can be used to improve the user experience through
+                    accessibility, consistency, and adaptability. Accessibility is improved through font and background choices, as well as navigational design. 
+                    Stylesheets also provide consistent formatting for the website or application, this not only improves the presentation of the site/app but also reduces redundancy by eliminating the need to format sections individually.
+                    Stylesheets also make a website or application adaptable for different platforms (browser, tablet, smartphone, etc.) and improve scalability.
+                </p>
+           
+                <p>
+                    There are five different ways to incorporate styles using CSS. <strong>External</strong> CSS means that the stylesheet is a separate file, this has the advantage of separating style (external CSS file) from content (HTML).
+                    There are two ways to incorporate an external file: linking or importing.
+                    Linking an external file uses a link tag and href to reference the stylesheet file. This was the approach used in making this website.
+                    Importing uses @import to import the stylesheet file. This enables using multiple stylesheets to format a website/app, but comes with performance drawbacks compared to linking the stylesheet.
+                    Styles can also be <strong>embedded</strong> directly into HTML or JavaScript files without the need for a separate stylesheet file. They are usually only used for one-off changes.
+                    There are three ways to embed styles: using a style tag, inline, or using JavaScript's Document Object Model.
+                    Style tags can be used directly in the &lt;head&gt; of an HTML file and reference an HTML element and style change (font color, size, etc.) They will apply the style to each instance of that element.
+                    Inline styling is done within an individual element in the HTML file, style changes will only affect that one element, not every instance of it.
+                    The Document Object Model (DOM) provides a way to embed a style change for an element directly into a JavaScript file. It does this by instructing the HTML file to update its style for each instance of the element passed in the DOM.
+                </p>
+            </article>
+            <article id="forms">
+                <h3>Forms</h3>
+     
+                <p>
+                    There are six major goals to keep in mind when creating accessible forms. 
+                    The first is to provide clear instructions so that the form gets filled out with the correct and necessary information.
+                    The second is to let the user know what information is required to submit the form and why the data is being collected.
+                    The third is to set <strong>autofocus</strong> to the first field so that the user can type without selecting an input box.
+                    The fourth is to ensure that a mouse is not necessary to complete the form, so that it is accessible to users who can only operate a keyboard.
+                    The fifth is to add tab indexing to the form so that the order of inputs to complete are clear to the user.
+                    The sixth is to make sure that any validation messages are readable to the user on their device.
+                </p>
+     
+                <p>
+                    There are several major tags used to build an HTML form.
+                    One is the <strong>&lt;form&gt;</strong> tag. The form tag has two important attributes. 
+                    One attribute is <strong>action</strong>, which contains a URL that specifies where the form data will be sent to. This URL can be an absolute URL or a relative path.
+                    The second attribute is <strong>method</strong>, which describes the HTTP method (typically GET or POST) that will be used in the HTTP request sent after the form is submitted.
+                    Another major tag is <strong>&lt;fieldset&gt;</strong>. Fieldset is used to break a form up into logical sections.
+                    Another major tag is <strong>&lt;input&gt;</strong>. The input tag allows a user to enter data and has three important attributes. 
+                    One is <strong>type</strong>, which greatly changes the field. Type can be used to specify email input, name input, checkbox input, or radio input. Each of these types have additional unique attributes. 
+                    The second important attribute is <strong>name</strong>. The name attribute helps the server identify which part of the form the data it receives is associated with.  
+                    The third important attribute is <strong>required</strong>. The required attribute specifies whether or not the input must be filled out to submit the form.
+                    Two other major tags are <strong>&lt;select&gt;</strong> and <strong>&lt;option&gt;</strong>. These work together to create dropdown menus with a list of choices.
+                    Another major tag is <strong>&lt;textarea&gt;</strong>, which is used for text input with multiple lines of text.
+                    Finally, the <strong>&lt;button&gt;</strong> tag, when activated, performs the action attribute in the form tag.
+                </p>
+      
+                 <p>
+                    There are several form style recommendations that improve usability. 
+                    One recommendation is to increase <strong>font size and padding</strong> for inputs to improve phone and tablet usability, since fingers are not as precise as a mouse or trackpad.
+                    Another is to use a <strong>color change</strong> to highlight what field is currently selected, so that it is easy for the user to see what field they are filling out.
+                    Additionally, color changes can be useful to highlight required fields so that the user can easily identify what must be filled out to submit the form.
+                    Another common style recommendation is to use <strong>patterns</strong> to validate inputs, which helps the user ensure that they did not make a mistake when filling out the field.
+                 </p>
+            </article>
+            <article id="express">
+                <h3>Node & Express</h3>
+
+                <p>
+                    Node, Express, and npm are important technologies that significantly improve the web development experience and are used to build dynamic web pages and applications.
+                    <strong>Node.js</strong> is a runtime environment that allows JavaScript to run on the server-side, building the server environment.
+                    <strong>Express.js</strong> is a node framework that handles routing of HTTP requests and middleware. 
+                    Express provides a framework to directly specify route names and request types, simplifying this process.
+                    Express middleware can be used to simplify tasks like authentication, data extraction, etc. 
+                    <strong>Npm</strong> stands for node package manager and is used to install and manage necessary packages to run the website/application, as well as to run/automate scripts.
+                    One of the steps to setting up a node/express environment is to use npm to install express.
+                    Npm can also run tasks from the terminal, the server this site is running on was started through the "npm start" command, which initialized the "start" script in the package.json file.
+                </p>
+            </article>
+            <article id="javascript">
+                <h3> JavaScript</h3>
+
+                <p>
+                    There are several main data types in the JavaScript programming language. 
+                    <strong>Numbers</strong> are represented by double-precision-floating-point values. 
+                    <strong>Boolean values</strong> are either true or false.
+                    <strong>Strings</strong> are series of characters within double or single quotation marks.
+                    <strong>Null and undefined</strong> values are the absence of a value.
+                </p>
+
+                <p>
+                    <strong>Objects</strong> are a collection of properties and their values. Objects are useful for storing data, as the values for each property can be updated, read, and deleted, and new properties can be made.
+                    <strong>Arrays</strong> are useful for storing a collection of any data type, including objects. The data can be accessed by indexing the array. This index begins at the value 0.
+                    <strong>JSON</strong> is an acronym for JavaScript Object Notation and is useful because it can map an object's properties to a string and visa-versa.
+                    This is particularly useful because it is compatible with any programming language, allowing for an easy way to exchange data between languages.
+                </p>
+
+                <p>
+                    <strong>Conditionals</strong> are used to dictate the flow of a program. Different actions can be taken if certain conditions are met. These are typically written as "if", "else if", or "else" statements.
+                    An "if" statement will execute the defined expression if the condition returns a "true" boolean value. An "else if" statement will execute the expression if the initial condition returned "false", but the "else if" condition returned a "true" value.
+                    An "else" statement will execute if the "if" and all of the "else if" statements return "false" boolean values.
+                    <strong>Loops</strong> are used to repeat a sequence of steps a certain number of times. The number of times can be specified, as in a "for" loop, or the action(s) can repeat until a condition is met, as in a "while" loop. 
+                </p>
+
+                <p>
+                    <strong>Object-oriented programming</strong>, also known as OOP, is a model that bases programming around objects and data rather than functions.
+                    Objects are collections of data that represent the properties of an object. These can be changed through functions and encapsulated away from the end-user.
+                    The way functions affect an object depends on the object's class, and functions may not have the same effect on different objects.
+                    OOP tends to work better for use cases with greater complexity and undefined boundaries, as you can always add new classes that implement existing methods(functions).
+                </p>
+
+                <p>
+                    <strong>Functional programming</strong> is focused on functions without changing data. These functions will always return an identical value for the same arguments, in the same way that 
+                    mathematical equations will always result in the same answer if the numbers stay the same. This makes it more modular than OOP, however functional programming necessitates a fixed number of 
+                    things, making it harder to add new things.
+                </p>
+            </article>
+        </>
+    )
+}
+
+export default TopicsPage;
